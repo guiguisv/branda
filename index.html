@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BRANDA - Hacé tu marca realmente tuya®</title>
+<link rel="icon" type="image/png" href="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/BRANDA%20BYN-Photoroom%20%281%29%20%281%29-dnZmsNbRjoec0IgzhEemtyaHAEA6bx.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  /* Reset y variables con los colores Pantone solicitados */
+  :root {
+    --color-black: #2B2929; /* PANTONE 19-3911 TCX – Black Beauty */
+    --color-white: #F4F5F0; /* PANTONE 11-0601 TCX – Bright White */
+    --color-irish-cream: #C0A98B; /* PANTONE 14-1208 TCX – Irish Cream */
+    --color-antique-white: #EEDFCB; /* PANTONE 11-0105 TCX – Antique White */
+    --color-pageant-blue: #2A3950; /* PANTONE 19-4111 TCX – Pageant Blue */
+    --color-almond-blossom: #E6B8C6; /* PANTONE 13-2006 TCX – Almond Blossom */
+    
+    /* Haciendo el rosa el color principal */
+    --color-primary: var(--color-almond-blossom);
+    --color-secondary: var(--color-antique-white);
+    --color-tertiary: var(--color-pageant-blue);
+    --color-quaternary: var(--color-irish-cream);
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-family: 'Space Grotesk', sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    line-height: 1.6;
+  }
+  
+  /* Layout */
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  section {
+    padding: 80px 0;
+  }
+  
+  /* Tipografía */
+  h1, h2, h3 {
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  
+  p {
+    margin-bottom: 15px;
+  }
+  
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 3.5rem;
+    }
+    
+    h2 {
+      font-size: 2.5rem;
+    }
+  }
+  
+  /* Componentes */
+  .btn {
+    display: inline-block;
+    background: var(--color-black);
+    color: var(--color-white);
+    font-weight: 700;
+    padding: 12px 24px;
+    border: 2px solid var(--color-black); /* Bordes más finos */
+    box-shadow: 4px 4px 0 var(--color-black); /* Sombra ajustada */
+    transition: all 0.2s ease;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  
+  .btn:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 var(--color-black);
+  }
+  
+  .card {
+    background: var(--color-white);
+    border: 2px solid var(--color-black); /* Bordes más finos */
+    box-shadow: 4px 4px 0 var(--color-black); /* Sombra ajustada */
+    padding: 30px;
+    transition: all 0.2s ease;
+    height: 100%;
+  }
+  
+  .card:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 var(--color-black);
+  }
+  
+  /* Header */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--color-white);
+    border-bottom: 2px solid var(--color-black); /* Bordes más finos */
+    z-index: 1000;
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+  }
+  
+  .logo {
+    height: 40px;
+  }
+  
+  nav a {
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--color-black);
+    margin-left: 30px;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+  
+  .mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 768px) {
+    nav.desktop-nav {
+      display: none;
+    }
+    
+    .mobile-menu-btn {
+      display: block;
+    }
+  }
+  
+  /* Hero - Nuevo estilo basado en la referencia */
+  .hero {
+    padding-top: 120px;
+    padding-bottom: 60px;
+    background-color: var(--color-primary);
+    border-bottom: 2px solid var(--color-black); /* Bordes más finos */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  
+  .hero-title {
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+  }
+  
+  .hero-title .coin-flip {
+    position: absolute;
+    right: 20%;
+    top: 20%;
+    font-size: 6rem; /* Mucho más grande */
+  }
+  
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2.5rem;
+    }
+    
+    .hero-title .coin-flip {
+      position: relative;
+      right: auto;
+      top: auto;
+      font-size: 4rem; /* Más grande en móvil */
+    }
+  }
+  
+  /* Grids */
+  .grid {
+    display: grid;
+    gap: 30px;
+  }
+  
+  @media (min-width: 768px) {
+    .grid-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .grid-4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  /* Secciones */
+  #proceso {
+    background-color: var(--color-secondary);
+    border-bottom: 2px solid var(--color-black); /* Bordes más finos */
+  }
+  
+  #servicios {
+    background-color: var(--color-tertiary);
+    color: var(--color-white);
+    border-bottom: 2px solid var(--color-black); /* Bordes más finos */
+  }
+  
+  #servicios .card {
+    color: var(--color-black);
+  }
+  
+  #contacto {
+    background-color: var(--color-primary);
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .mt-lg {
+    margin-top: 40px;
+  }
+  
+  /* Iconos y elementos visuales */
+  .number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  .icon {
+    margin-bottom: 20px;
+  }
+  
+  /* Imágenes de Branda - Más pequeñas y separadas */
+  .branda-image {
+    width: 80%; /* Más pequeña */
+    height: auto;
+    border: 2px solid var(--color-black); /* Bordes más finos */
+    box-shadow: 4px 4px 0 var(--color-black); /* Sombra ajustada */
+    margin: 0 auto 20px;
+    display: block;
+  }
+  
+  .branda-image-small {
+    width: 40%; /* Un poco más pequeña que antes (era 50%) */
+    height: auto;
+    border: 2px solid var(--color-black); /* Bordes más finos */
+    box-shadow: 4px 4px 0 var(--color-black); /* Sombra ajustada */
+    margin: 40px auto; /* Más separación */
+    display: block;
+  }
+  
+  .image-gallery {
+    margin: 60px 0; /* Más separación */
+  }
+  
+  /* WhatsApp Button */
+  .whatsapp-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    transition: transform 0.3s ease;
+  }
+  
+  .whatsapp-btn:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Footer */
+  footer {
+    padding: 40px 0;
+    text-align: center;
+    border-top: 2px solid var(--color-black); /* Bordes más finos */
+    background-color: var(--color-quaternary);
+  }
+  
+  .footer-logo {
+    height: 30px;
+    margin-bottom: 20px;
+  }
+  
+  /* Animaciones */
+  .animate {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  
+  .animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Scroll to top */
+  .scroll-top {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    cursor: pointer;
+  }
+  
+  .scroll-top.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .scroll-top:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Contacto cards como botones */
+  .contact-card {
+    display: block;
+    text-decoration: none;
+    color: var(--color-black);
+    background: var(--color-white);
+    border: 2px solid var(--color-black); /* Bordes más finos */
+    box-shadow: 4px 4px 0 var(--color-black); /* Sombra ajustada */
+    padding: 30px;
+    transition: all 0.2s ease;
+    text-align: center;
+  }
+  
+  .contact-card:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 var(--color-black);
+    background-color: var(--color-black);
+    color: var(--color-white);
+  }
+  
+  .contact-card:hover svg {
+    stroke: var(--color-white);
+  }
+  
+  /* Animación de moneda para el símbolo ® - Mucho más grande */
+  .coin-flip {
+    display: inline-block;
+    position: relative;
+    animation: coinFlip 6s infinite; /* Más lento: 6s en lugar de 3s */
+    transform-style: preserve-3d;
+    font-size: 3.5em; /* Mucho más grande */
+    margin-left: 5px;
+  }
+  
+  @keyframes coinFlip {
+    0% { transform: rotateY(0); }
+    40% { transform: rotateY(1800deg); }
+    50% { transform: rotateY(1800deg); }
+    90% { transform: rotateY(0); }
+    100% { transform: rotateY(0); }
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(10px);
+    }
+  }
+  
+  .bounce {
+    animation: bounce 1s infinite;
+  }
+  
+  /* Separadores de sección */
+  .section-divider {
+    height: 40px;
+  }
+</style>
+</head>
+<body>
+<!-- Header -->
+<header>
+  <div class="container header-container">
+    <a href="#">
+      <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/BRANDA%20BYN-Photoroom%20%281%29-y7oFYHLCi8XHfkmRQqdcdbK9Ab2kUO.png" alt="BRANDA Logo" class="logo">
+    </a>
+    <nav class="desktop-nav">
+      <a href="#proceso">Proceso</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <button class="mobile-menu-btn" id="mobile-menu-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  
+  <div id="mobile-menu" class="container" style="display: none; padding: 20px 0; border-top: 1px solid #eee;">
+    <nav>
+      <a href="#proceso" style="display: block; margin: 10px 0;">Proceso</a>
+      <a href="#servicios" style="display: block; margin: 10px 0;">Servicios</a>
+      <a href="#contacto" style="display: block; margin: 10px 0;">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero Section - Nuevo estilo basado en la referencia -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content animate">
+      <div class="hero-title">
+        HACÉ TU MARCA<br>
+        REALMENTE<br>
+        TUYA
+        <span class="coin-flip">®</span>
+      </div>
+      <p>
+        BRANDA nació para hacer que registrar tu marca sea fácil, claro y sin complicaciones. Sabemos que emprender ya tiene suficientes desafíos, por eso eliminamos la burocracia y hacemos que registrar tu marca sea rápido y sin vueltas.
+      </p>
+      <div style="margin-top: 30px;">
+        <a href="https://wa.me/5491176223091?text=Hola!%20Quiero%20más%20información%20sobre%20los%20registros%20de%20marca." class="btn" target="_blank" rel="noopener noreferrer">
+          Lo quiero
+        </a>
+      </div>
+    </div>
+    <div class="text-center mt-lg animate">
+      <a href="#proceso" aria-label="Scroll down">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="bounce">
+          <path d="M7 13l5 5 5-5"></path>
+          <path d="M7 6l5 5 5-5"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Process Section -->
+<section id="proceso">
+  <div class="container">
+    <h2 class="animate">Tu marca en 3 pasos</h2>
+    
+    <div class="grid grid-4">
+      <div class="card animate">
+        <div class="number">01</div>
+        <h3>Pedí tu presupuesto</h3>
+        <p>Contactanos por WhatsApp y resolvé todas tus dudas.</p>
+      </div>
+      
+      <div class="card animate">
+        <div class="number">02</div>
+        <h3>Ingresamos tu solicitud</h3>
+        <p>Nos encargamos de todo el trámite en el INPI.</p>
+      </div>
+      
+      <div class="card animate">
+        <div class="number">03</div>
+        <h3>Recibí tu título</h3>
+        <p>Obtenés tu título de marca y nuestra guía para proteger tu identidad.</p>
+      </div>
+      
+      <div class="card animate">
+        <div class="number">04</div>
+        <h3>No existe!</h3>
+        <p>Porque ya tenés tu marca registrada.</p>
+      </div>
+    </div>
+    
+    <div class="text-center mt-lg animate">
+      <a href="https://wa.me/5491176223091?text=Hola!%20Quiero%20más%20información%20sobre%20los%20registros%20de%20marca." class="btn" target="_blank" rel="noopener noreferrer">
+        Empezar ahora
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Imagen de Branda separada -->
+<div class="section-divider"></div>
+<div class="container">
+  <div class="image-gallery animate">
+    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_2764.JPG-Vh68DMVCKyeWjDD99j2xcObTE9FxY4.jpeg" alt="Documentos de Branda con laptop" class="branda-image">
+  </div>
+</div>
+<div class="section-divider"></div>
+
+<!-- Services Section -->
+<section id="servicios">
+  <div class="container">
+    <h2 class="animate">Protegé tu creatividad</h2>
+    
+    <div class="grid grid-3">
+      <div class="card animate">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
+        </svg>
+        <h3>Registro de Marcas</h3>
+        <p>Protegé tu identidad comercial y asegurá la exclusividad de uso de tu marca en el mercado.</p>
+      </div>
+      
+      <div class="card animate">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+          <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+        </svg>
+        <h3>Registro de Obras</h3>
+        <p>Protegé tus creaciones intelectuales, diseños y obras artísticas contra el uso no autorizado.</p>
+      </div>
+      
+      <div class="card animate">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+          <line x1="12" y1="17" x2="12.01" y2="17"></line>
+        </svg>
+        <h3>Asesoramiento</h3>
+        <p>Recibí orientación personalizada sobre la mejor estrategia para proteger tu propiedad intelectual.</p>
+      </div>
+      
+      <div class="card animate">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        <h3>Contratos Legales</h3>
+        <p>Documentos legales personalizados para proteger tu marca y establecer relaciones comerciales seguras.</p>
+      </div>
+      
+      <div class="card animate">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+          <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+        </svg>
+        <h3>Modelos y Diseños</h3>
+        <p>Protección legal para tus diseños industriales, asegurando la exclusividad de tus creaciones en el mercado.</p>
+      </div>
+      
+      <div class="card animate">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="3" y1="9" x2="21" y2="9"></line>
+          <line x1="9" y1="21" x2="9" y2="9"></line>
+        </svg>
+        <h3>Inscripción de Sociedades</h3>
+        <p>Asesoramiento y gestión para la constitución legal de tu empresa o sociedad comercial.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Segunda imagen de Branda separada - Un poco más pequeña -->
+<div class="section-divider"></div>
+<div class="container">
+  <div class="image-gallery animate">
+    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_2632.JPG-yztU7jkvWo48lUdIu5AQK2WeYJR3G2.jpeg" alt="Tablet con Branda" class="branda-image-small">
+  </div>
+</div>
+<div class="section-divider"></div>
+
+<!-- Contact Section -->
+<section id="contacto">
+  <div class="container">
+    <h2 class="animate">¿Hablamos?</h2>
+    
+    <div class="grid grid-3">
+      <a href="https://wa.me/5491176223091?text=Hola!%20Quiero%20más%20información%20sobre%20los%20registros%20de%20marca." class="contact-card animate" target="_blank" rel="noopener noreferrer">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+        </svg>
+        <h3>WhatsApp</h3>
+        <p>+5491176223091</p>
+      </a>
+      
+      <a href="https://instagram.com/tu.branda" class="contact-card animate" target="_blank" rel="noopener noreferrer">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+        <h3>Instagram</h3>
+        <p>@tu.branda</p>
+      </a>
+      
+      <a href="mailto:info@tubranda.com.ar" class="contact-card animate" target="_blank" rel="noopener noreferrer">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+          <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+        <h3>Email</h3>
+        <p>info@tubranda.com.ar</p>
+      </a>
+    </div>
+    
+    <div class="text-center mt-lg animate">
+      <p style="font-size: 1.25rem; margin-bottom: 20px;">¿Listo para proteger tu marca?</p>
+      <a href="https://wa.me/5491176223091?text=Hola!%20Quiero%20más%20información%20sobre%20los%20registros%20de%20marca." class="btn" target="_blank" rel="noopener noreferrer">
+        Contactanos ahora
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/BRANDA%20BYN-Photoroom%20%281%29-y7oFYHLCi8XHfkmRQqdcdbK9Ab2kUO.png" alt="BRANDA Logo" class="footer-logo">
+    <p>&copy; 2025 BRANDA. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<!-- WhatsApp Button - Corregido -->
+<a href="https://wa.me/5491176223091?text=Hola!%20Quiero%20más%20información%20sobre%20los%20registros%20de%20marca." class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"></path>
+    <path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1Z"></path>
+    <path d="M14 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1Z"></path>
+    <path d="M9.5 13.5c.5 1 1.5 1 2.5 1s2-.5 2.5-1"></path>
+  </svg>
+</a>
+
+<!-- Scroll to Top Button -->
+<button id="scroll-top" class="scroll-top" aria-label="Volver arriba">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 15l-6-6-6 6"/>
+  </svg>
+</button>
+
+<script>
+  // Menú móvil
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', function() {
+        if (mobileMenu.style.display === 'none') {
+          mobileMenu.style.display = 'block';
+        } else {
+          mobileMenu.style.display = 'none';
+        }
+      });
+      
+      // Cerrar menú al hacer clic en un enlace
+      const mobileLinks = mobileMenu.querySelectorAll('a');
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          mobileMenu.style.display = 'none';
+        });
+      });
+    }
+    
+    // Animación al hacer scroll
+    const animateElements = document.querySelectorAll('.animate');
+    
+    function checkIfInView() {
+      animateElements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 150;
+        
+        if (elementTop < window.innerHeight - elementVisible) {
+          element.classList.add('animate-in');
+        }
+      });
+    }
+    
+    // Ejecutar al cargar la página
+    checkIfInView();
+    
+    // Ejecutar al hacer scroll
+    window.addEventListener('scroll', checkIfInView);
+    
+    // Botón de volver arriba
+    const scrollTopButton = document.getElementById('scroll-top');
+    
+    if (scrollTopButton) {
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+          scrollTopButton.classList.add('visible');
+        } else {
+          scrollTopButton.classList.remove('visible');
+        }
+      });
+      
+      scrollTopButton.addEventListener('click', function() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    }
+  });
+</script>
+</body>
+</html>
